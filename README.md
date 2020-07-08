@@ -1,5 +1,4 @@
-### Using input and output redirection
-
+## Using input and output redirection
 
 ```bash
 cat cities.txt > /dev/stdout
@@ -19,7 +18,7 @@ find / -user suku 2> /dev/null
 find ./ -size +8c | tee user_files.txt
 ```
 
-### Controlling and Manipulating Running Scripts
+## Controlling and Manipulating Running Scripts
                 
 Command                                  | Key binding
 -------------                            | -------------
@@ -30,17 +29,17 @@ Runs script in background                    | ./abc.sh $
 To kill a job                             | kill %[job no]
 Detach bg running job                            | diswon -h %1
 
-> To pause long running script or process
+> Note: To pause long running script or process
 
 
-### Working with buil-in variables
+## Variables
 
 > Last executed command is successful or not 
 >>echo $?
 
 > ./machine-stats.sh
 
-### Using and manipulating variables
+#### Using and manipulating variables
 
 > ./vars_output.sh 
 
@@ -49,10 +48,10 @@ Detach bg running job                            | diswon -h %1
 >./call_export_var.sh
 >>export_var.sh
 
-> Variable scope
->>./scope.sh
+#### Variable scope
+>./scope.sh
 
-### Formatting variable output
+#### Formatting variable output
 
 ```bash
 #Date format
@@ -63,11 +62,10 @@ Detach bg running job                            | diswon -h %1
  namvar=5.5
  printf "%f\n" $namvar
 ```
-### Creating and using function
+## Creating and using function
 
 #### . sourcing lib function
 
 > . ./func_lib1.sh
->userinfo
->ipinfo
-
++ userinfo
++ ipinfo
