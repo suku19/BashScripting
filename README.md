@@ -1,4 +1,6 @@
-## Using input and output redirection
+# Getting Started with scripting
+
+## Input and output redirection
 
 ```bash
 cat cities.txt > /dev/stdout
@@ -37,19 +39,19 @@ Detach bg running job                            | diswon -h %1
 > Last executed command is successful or not 
 >>echo $?
 
-> ./machine-stats.sh
+> [./machine-stats.sh](https://github.com/suku19/bash-scripting/blob/master/01-variable-and-args/machine-stats.sh)
 
 #### Using and manipulating variables
 
-> ./vars_output.sh 
+> [./vars_output.sh](https://github.com/suku19/bash-scripting/blob/master/01-variable-and-args/vars_output.sh) - built in variables
 
 #### Pass the variable
 
->./call_export_var.sh
->>export_var.sh
+>[./call_export_var.sh](https://github.com/suku19/bash-scripting/blob/master/01-variable-and-args/call_export_var.sh)
+>[./export_var.sh](https://github.com/suku19/bash-scripting/blob/master/01-variable-and-args/export_var.sh) 
 
 #### Variable scope
->./scope.sh
+>[./scope.sh](https://github.com/suku19/bash-scripting/blob/master/03-function/scope.sh) - variable scope within a function
 
 #### Formatting variable output
 
@@ -64,8 +66,6 @@ Detach bg running job                            | diswon -h %1
 ```
 ## Creating and using function
 
-#### . sourcing lib function
++ [. ./func_lib1.sh](https://github.com/suku19/bash-scripting/blob/master/03-function/func_lib1.sh) - . sourcing lib function
 
-> . ./func_lib1.sh
-+ userinfo
-+ ipinfo
++ [func_args.sh](https://github.com/suku19/bash-scripting/blob/master/03-function/func_args.sh) - return a value from function
