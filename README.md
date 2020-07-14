@@ -162,3 +162,59 @@ echo "34*4.6" | bc
 
 #### Converting Numbers
 
++ [to_binary.sh](https://github.com/suku19/bash-scripting/blob/master/05-datatypes/to_binary.sh) - convert ip address to binary 
+
+#### Manipulating String
+
+```bash
+$ locationcode="hfx123" 
+$ echo ${#locationcode} 
+6
+$ echo `expr "$locationcode" : '\(..\)'` 
+hf
+$ echo `expr "$locationcode" : '\([a-c]\)'` 
+$ echo `expr "$locationcode" : '\([a-m]\)'` 
+h
+$ echo ${locationcode:0:3} 
+hfx
+$ echo ${locationcode:3:3} 
+123
+$ echo ${locationcode//hfx/yhz} 
+yhz123
+$ locationcode=${locationcode//hfx/yhz}
+$ echo $locationcode
+yhz123
+```
+## Advanced scripting
+#### Catching and Trapping Interrupts and Signals
+
+>Available trap option
+```bash
+trap -l
+```
+
++ [while.sh](https://github.com/suku19/bash-scripting/blob/master/06-advanced-script/while.sh) - catching ctrl+c and clearing temp files from "dtatfiles/tmp" directory
+
+#### Using Brace Expansion and Eval
+
+```bash
+# Brace expansion
+$ echo {1..10}
+1 2 3 4 5 6 7 8 9 10
+
+$ echo {a..g}
+a b c d e f g
+
+$ echo 20{10..18}
+2010 2011 2012 2013 2014 2015 2016 2017 2018
+
+```
+
+> eval [args ...] - The  args  are read and concatenated together into a single com-
+    mand.
+
++ [budgetdir.sh](https://github.com/suku19/bash-scripting/blob/master/06-advanced-script/budgetdir.sh) - creating dir based on brace expansion and eval
+
+#### Applying Defaults for Input
+
++ [vardefault.sh](https://github.com/suku19/bash-scripting/blob/master/06-advanced-script/vardefault.sh) - Set default value for a variable and enable error for undefine variable
