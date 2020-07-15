@@ -25,14 +25,12 @@ find ./ -size +8c | tee user_files.txt
 Command                                  | Key binding
 -------------                            | -------------
 To pause long running script or process  | Control + S
-Find stop Jobs                          | jobs 
-Resume stop job                         | bg [job no]
-Runs script in background                    | ./abc.sh $
-To kill a job                             | kill %[job no]
-Detach bg running job                            | diswon -h %1
-
-> Note: To pause long running script or process
-
+Find stop Jobs                           | jobs 
+Resume stop job                          | bg [job no]
+To bring back stop job in foreground     | fg [job no]
+Runs script in background                | ./abc.sh $
+To kill a job                            | kill %[job no]
+Detach bg running job                    | diswon -h %1
 
 ## Variables
 
@@ -59,7 +57,7 @@ Detach bg running job                            | diswon -h %1
 #Date format
  date +'%Y-%m-%d'
 #Formatiing using printf
- costcenter= "Toronto"
+ costcenter="Toronto"
  printf "%.3s\n" $costcenter
  namvar=5.5
  printf "%f\n" $namvar
@@ -208,13 +206,41 @@ a b c d e f g
 $ echo 20{10..18}
 2010 2011 2012 2013 2014 2015 2016 2017 2018
 
+$ echo {a..c}{2018..2020}
+a2018 a2019 a2020 b2018 b2019 b2020 c2018 c2019 c2020
+
+$ echo {{a..c},{2018..2020}}
+a b c 2018 2019 2020
+
 ```
 
-> eval [args ...] - The  args  are read and concatenated together into a single com-
-    mand.
+> eval [args ...] - The  args  are read and concatenated together into a single command.
 
 + [budgetdir.sh](https://github.com/suku19/bash-scripting/blob/master/06-advanced-script/budgetdir.sh) - creating dir based on brace expansion and eval
 
 #### Applying Defaults for Input
 
 + [vardefault.sh](https://github.com/suku19/bash-scripting/blob/master/06-advanced-script/vardefault.sh) - Set default value for a variable and enable error for undefine variable
+
+#### Handling Result of Another script
+
++ [2.sh](https://github.com/suku19/bash-scripting/blob/master/06-advanced-script/2.sh)
+
++ [1.sh](https://github.com/suku19/bash-scripting/blob/master/06-advanced-script/1.sh) - invoke 2.sh and handle the output
+
+#### Textual Progress Indicators
+
++ [progressbar.sh](https://github.com/suku19/bash-scripting/blob/master/06-advanced-script/progressbar.sh) - print the progress bar while reading a file and total elapsed time in seconds
+
+## Files
+
+> 
+```bash
+# Word count of file
+wc -l ../datafiles/cities.txt
+```
+
+
+
+
+
